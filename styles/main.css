@@ -1,0 +1,13 @@
+.form-control {
+  line-height: 2.5rem;
+}
+/* .card-img {
+  object-fit: contain;
+  object-position: top;
+} */
+img {
+  object-fit: cover;
+  max-width: 100%;
+  aspect-ratio: 2/3;
+
+}

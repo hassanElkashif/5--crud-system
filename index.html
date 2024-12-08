@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store</title>
+  <script
+      src="https://kit.fontawesome.com/e46786db33.js"
+      crossorigin="anonymous"
+    ></script>
+  <link rel="stylesheet" href="./styles/bootstrap.min.css">
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+  
+  <section class="form">
+    <div class="container">
+      <div class="row">
+        <div class="title text-center mt-4">
+          <h2 class="text-capitalize">store system</h2>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="d-flex gap-5">
+          <div class="productName w-50">
+            <input type="text" class="form-control" name="pName" id="Pname" placeholder="Product Name">
+            <div class="invalid-feedback d-none name-alert">
+              Please add a product name.
+            </div>
+          </div>
+          <div class="productPrice w-50">
+            <input type="number" class="form-control" name="pPrice" id="pPrice" placeholder="Product Price">
+            <div class="invalid-feedback d-none price-alert">
+              Please add a product price between 6000 - 60000.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="d-flex gap-5">
+          <div class="productPrice w-50">
+            <select class="form-control" name="pCat" id="pCat" required>
+              <option value="" disabled selected>Choose a Product Category</option>
+              <option value="T-Shirt">T-Shirt</option>
+              <option value="Dress">Dress</option>
+              <option value="Pants">Pants</option>
+              <option value="Suit">Suit</option>
+            </select>
+          </div>
+            <div class="form-floating w-50">
+              <input type="file" class="form-control" id="pImg" name="pImg">
+              <div class="invalid-feedback d-none image-alert">
+                Please add a product image.
+              </div>
+              <label for="pImg" class="mb-3" style="padding: 0.8rem .75rem;">Product Image</label>
+            </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="d-flex flex-column">
+            <textarea name="pDesc" id="pDesc"  class="form-control" placeholder="Product Descreption" rows="3"></textarea>
+            <div class="invalid-feedback d-none desc-alert">
+              Please add a descreption with 250 characters max.
+            </div>
+          </div>
+      </div>
+      <div class="row mt-4">
+        <div class="d-flex justify-content-center">
+            <button onclick="addProduct();" class="btn btn-primary w-50 mb-4" id="add-btn">Add Product</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cards-container py-4">
+    <div class="container">
+      <input type="text" oninput="searchProducts(this.value);" class="form-control " name="pSearch" id="pSearch" placeholder="Product Search">
+      <p class="text-center mt-5 d-none noProducts">No Products Available </p>
+      <div class="row mt-4 gy-3" id="productsRow">
+      </div>
+    </div>
+  </section>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
